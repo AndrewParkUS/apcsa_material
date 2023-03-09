@@ -2,7 +2,7 @@ import java.io.*;
 import java.util.*;
 
 
-public class MyLinkedList{
+public class MyLinkedList {
 
   private Node head;
 
@@ -51,6 +51,7 @@ public class MyLinkedList{
     }
 
     return size;
+
   }
 
 
