@@ -6,9 +6,9 @@ public class QuickSelect {
         int pivot = partition(data, start, end);
         
         if (pivot > k-1) {
-            QuickSelect (data, start, pivot-1, k);
+            return QuickSelect(data, start, pivot-1, k);
         } else if (pivot < k-1) {
-            QuickSelect (data, pivot+1, end, k);
+            return QuickSelect(data, pivot+1, end, k);
         } else {
             // kth element found
             return data[k-1];
@@ -20,13 +20,13 @@ public class QuickSelect {
         int pivot = (int) (Math.random() * (end-start)) + start;
         
         if (pivot != start) {
-            swap(data[pivot], data[start]);
+            swap(data, pivot, start);
             start++;
         }
         
         while (start != end) {
             if (data[start] > data[pivot]) {
-                swap(data[start], data[end]);
+                swap(data, start, end);
                 end--;
             } else {
                 start++;
@@ -34,11 +34,11 @@ public class QuickSelect {
         }
         
         if (data[start] <= data[pivot]) {
-            swap(data[start], data[pivot]);
+            swap(data, start, pivot);
             pivot = start;
         } else {
-            swap(data[start-1],data[pivot]);
-            pivot = start - 1;
+            swap(data, start-1, pivot);
+            pivot = start-1;
         }
         
         return pivot;     
