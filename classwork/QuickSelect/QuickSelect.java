@@ -1,4 +1,4 @@
-import java.util.Random;
+import java.util.Math;
 
 public class QuickSelect {
     
@@ -15,8 +15,7 @@ public class QuickSelect {
         }
     }
     
-    public static int partition (int[] data, int start, int end) {
-        Random random = new Random();   
+    public static int partition (int[] data, int start, int end) { 
         int pivot = (int) (Math.random() * (end-start)) + start;
         
         if (pivot != start) {
