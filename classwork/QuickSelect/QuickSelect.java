@@ -1,14 +1,22 @@
-import java.util.Math;
+import java.util.*;
 
 public class QuickSelect {
+    
+    public static void QuickSort (int[] data, int start, int end) {
+        if (start < end) {
+            pivot = partition(data, start, end);
+            QuickSort(data, start, pivot-1);
+            QuickSort(data, pivot+1, end);
+        }
+    }
     
     public static int QuickSelect (int[] data, int start, int end, int k) {
         int pivot = partition(data, start, end);
         
         if (pivot > k-1) {
-            return QuickSelect(data, start, pivot-1, k);
+            QuickSelect(data, start, pivot-1, k);
         } else if (pivot < k-1) {
-            return QuickSelect(data, pivot+1, end, k);
+            QuickSelect(data, pivot+1, end, k);
         } else {
             // kth element found
             return data[k-1];
@@ -43,7 +51,7 @@ public class QuickSelect {
         return pivot;     
     }
     
-    public static void swap(int[] data, int swap1, int swap2 ) {
+    public static void swap(int[] data, int swap1, int swap2) {
         int temp = data[a];
         data[a] = data[b];
         data[b] = temp;
