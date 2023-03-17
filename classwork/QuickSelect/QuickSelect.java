@@ -4,8 +4,8 @@ public class QuickSelect {
     public static void QuickSort (int[] data, int start, int end) {
         if (start < end) {
             pivot = partition(data, start, end);
-            QuickSort(data, start, pivot-1);
-            QuickSort(data, pivot+1, end);
+            QuickSort(data, start, pivot - 1);
+            QuickSort(data, pivot + 1, end);
         }
     }
     
@@ -13,11 +13,11 @@ public class QuickSelect {
         int pivot = partition(data, start, end);
         
         if (pivot > k-1) {
-            QuickSelect(data, start, pivot-1, k);
-        } else if (pivot < k-1) {
-            QuickSelect(data, pivot+1, end, k);
+            QuickSelect(data, start, pivot - 1, k);
+        } else if (pivot < k - 1) {
+            QuickSelect(data, pivot + 1, end, k);
         } else {
-            return data[k-1];
+            return data[k - 1];
         }
     }
     
