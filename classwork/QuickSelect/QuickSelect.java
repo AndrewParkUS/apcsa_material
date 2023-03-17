@@ -1,7 +1,6 @@
 import java.util.*;
 
 public class QuickSelect {
-    
     public static void QuickSort (int[] data, int start, int end) {
         if (start < end) {
             pivot = partition(data, start, end);
@@ -18,13 +17,12 @@ public class QuickSelect {
         } else if (pivot < k-1) {
             QuickSelect(data, pivot+1, end, k);
         } else {
-            // kth element found
             return data[k-1];
         }
     }
     
     public static int partition (int[] data, int start, int end) { 
-        int pivot = (int) (Math.random() * (end-start)) + start;
+        int pivot = (int) (Math.random() * (end - start)) + start;
         
         if (pivot != start) {
             swap(data, pivot, start);
@@ -44,16 +42,16 @@ public class QuickSelect {
             swap(data, start, pivot);
             pivot = start;
         } else {
-            swap(data, start-1, pivot);
-            pivot = start-1;
+            swap(data, start - 1, pivot);
+            pivot = start - 1;
         }
         
         return pivot;     
     }
     
     public static void swap(int[] data, int swap1, int swap2) {
-        int temp = data[a];
-        data[a] = data[b];
-        data[b] = temp;
+        int temp = data[swap1];
+        data[swap1] = data[swap2];
+        data[swap2] = temp;
     }
 }
