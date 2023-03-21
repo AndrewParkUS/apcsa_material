@@ -1,8 +1,8 @@
 public class MergeSort {
   public static void MergeSort (int[] destination, int[] left, int[] right) {
-    if (left.length + right.length == destination.length) {
+    if (left.length + right.length == destination.length) { // Is this logical?
         merge(destination, left, right);
-    } else {
+    } else { 
       // Unfinished
     }
     
