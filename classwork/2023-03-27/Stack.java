@@ -61,5 +61,5 @@ public class Stack {
         result += "]";
 
         return result;
-      }
+    }
 }
