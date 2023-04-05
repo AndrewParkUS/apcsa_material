@@ -1,6 +1,25 @@
 import java.util.Stack;
 
 public class Calculator {
+  public static String convert(String infix) {
+   Stack<Double> stack = new Stack<>();
+   String[] split = infix.split(" ");
+   String[] operands = new String<>;
+    
+   for (String bit : split) {
+    if (bit.equals("+") || bit.equals("-") || bit.equals("*") || bit.equals("/") || bit.equals("%")) { // modulo = multi/div > add/sub
+      operands.add(bit); // pseudocode
+      // parentheses not included
+   
+    } else {
+      stack.push(bit);
+    }
+   +}
+   // use elements in stack to convert to postfix?
+   return stack.toString;
+  }
+  
+  
   public static double eval(String expression) {
     Stack<Double> stack = new Stack<>();
     String[] split = expression.split(" ");
