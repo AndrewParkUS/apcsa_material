@@ -1,45 +1,49 @@
-public class Calculator {
-  // Implementation using a Stack
-  
-  Stack<Double> numbers = new Stack();
-  
-  // Evaluate a postfix expression stored in expression
-  public static double eval (String expression) {
-    // split expression by spaces into groups of expressions
-    
-    expressionlist = new ArrayList[expression.length]; //pseudocode
-    for (int i = 0; i < expression.length; i++) {
-      expressionlist[i] = expression.substring(i, i+1); 
-    } 
+import java.util.Stack;
 
-    // Code Segment
-    // If >2 operands, throw IllegalArgumentException("Too many operands");
-    // If <2 operands, throw IllegalArgumentException("Too few operands for operation +");
-    
-    // for each group of expressions
-    int operand1 = expression.substring[0]; // only takes first digit though
-    int operand2 = expression.substring[1];
-    String operator = expression.substring[expression.length-1];
-    
-    if (operator.equals("+")) {
-      return operand1 + operand2;
-    } else if (operator.equals("-")) {
-      return operand1 - operand2;
-    } else if (operator.equals("*")) {
-      return operand1 * operand2;
-    } else if (operator.equals("/")) {
-      return operand1 / operand2;
-    } else if (operator.equals("%")) {
-      return operand1 % operand2;
-    
-    // if statements to figure out which operator to use
-    return -1; // placeholder, operator should be different
+public class Calculator {
+  public static double eval(String expression) {
+    Stack<Double> stack = new Stack<>();
+    String[] split = expression.split(" ");
+
+    for (String bit : split) {
+      if (bit.equals("+")) {
+        if (stack.size() < 2) throw new IllegalArgumentException("Too few operands");
+        double operand2 = stack.pop();
+        double operand1 = stack.pop();
+        stack.push(operand1 + operand2);
+
+      } else if (bit.equals("-")) {
+        if (stack.size() < 2) throw new IllegalArgumentException("Too few operands");
+        double operand2 = stack.pop();
+        double operand1 = stack.pop();
+        stack.push(operand1 - operand2);
+
+      } else if (bit.equals("*")) {
+        if (stack.size() < 2) throw new IllegalArgumentException("Too few operands");
+        double operand2 = stack.pop();
+        double operand1 = stack.pop();
+        stack.push(operand1 * operand2);
+
+      } else if (bit.equals("/")) {
+        if (stack.size() < 2) throw new IllegalArgumentException("Too few operands");
+        double operand2 = stack.pop();
+        double operand1 = stack.pop();
+        stack.push(operand1 / operand2);
+
+      } else if (bit.equals("%")) {
+        if (stack.size() < 2) throw new IllegalArgumentException("Too few operands");
+        double operand2 = stack.pop();
+        double operand1 = stack.pop();
+        stack.push(operand1 % operand2);
+
+      } else {
+        double operand = Double.parseDouble(bit);
+        stack.push(operand);
+
+      }
+    }
+    if (stack.size() != 1) throw new IllegalArgumentException("Too many operands");
+
+    return stack.pop();
   }
-    
-    
-  
-  // Method to convert infix to postfix expression
-  public static String convert(String expression) {
-    String postfix; 
-    return postfix;
 }
