@@ -1,18 +1,18 @@
 public class Human {
-  private bool deadOrNot;
-  
-  public Human() {
-   deadOrNot = false;
-  }
-}
-
-public class German extends Human {
-  private int age;
-  public German(int height) {
-    super();
-  }
-  
-public class Beethoven extends German {
-  private bool true;
-  public Beethoven(int
+    private String name;
+    private int age;
+    
+    public Human() {
+        this.name = "";
+        this.age = 0;
+    }
+    
+    public Human(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+    
+    public void introduce() {
+        System.out.println("Hello, my name is " + name + " and I am " + age + " years old.");
+    }
 }
