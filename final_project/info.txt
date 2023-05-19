@@ -1,0 +1,4 @@
+Period: 1
+Group Names: Andrew Park
+Group Name: Diseased
+Project Title: Disease Simulator
