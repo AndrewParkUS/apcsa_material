@@ -139,12 +139,12 @@ class Person {
 Simulation simulation;
 
 void setup() {
-  size(800, 600);
+  size(1080, 720);
   simulation = new Simulation();
   simulation.setup();
 }
 
 void draw() {
   simulation.update();
-  delay(50);
+  delay(20);
 }
