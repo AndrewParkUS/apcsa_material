@@ -2,3 +2,6 @@ Period: 1
 Group Names: Andrew Park
 Group Name: Diseased
 Project Title: Disease Simulator
+
+Library Information:
+I used the library javax.swing.JOptionPane to allow for the user input windows. This lets me generate multiple windows before the simulation that lets the user configure the parameters of the environment and the disease. This is crucial, because the point of my project is to show how different diseases can change how environments are affected.
